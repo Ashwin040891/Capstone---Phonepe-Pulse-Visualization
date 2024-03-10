@@ -6,6 +6,7 @@ import requests
 import plotly.express as px
 import plotly.graph_objects as go
 from streamlit_option_menu import option_menu
+from PIL import Image
 
 #CREATE DATAFRAMES FROM SQL
 #sql connection
@@ -395,76 +396,17 @@ st.title("PHONEPE DATA VISUALIZATION AND EXPLORATION")
 st.write("")
 
 with st.sidebar:
-    select= option_menu("Main Menu",["Home", "Data Exploration", "Top Charts"])
+    select= option_menu("Main Menu",["Home", "Data Exploration", "Top Charts", "About"])
     
 if select == "Home":
 
-    col1,col2= st.columns(2)
-
+    col1,col2, = st.columns(2)
+    col1.image(Image.open("Phonepe_image2.png"),width = 300)
     with col1:
-        st.header("PHONEPE")
-        st.subheader("INDIA'S BEST TRANSACTION APP")
-        st.markdown("PhonePe  is an Indian digital payments and financial technology company")
-        st.write("****FEATURES****")
-        st.write("****Credit & Debit card linking****")
-        st.write("****Bank Balance check****")
-        st.write("****Money Storage****")
-        st.write("****PIN Authorization****")
+        st.subheader("PhonePe  is an Indian digital payments and financial technology company headquartered in Bengaluru, Karnataka, India. PhonePe was founded in December 2015, by Sameer Nigam, Rahul Chari and Burzin Engineer. The PhonePe app, based on the Unified Payments Interface (UPI), went live in August 2016. It is owned by Flipkart, a subsidiary of Walmart.")
         st.download_button("DOWNLOAD THE APP NOW", "https://www.phonepe.com/app-download/")
     with col2:
-        st.markdown(" ")
-        st.markdown(" ")
-        st.markdown(" ")
-        st.markdown(" ")
-        #st.video("C:\\Users\\vignesh\\Desktop\\CAPSTONE Projects\\phone pe\\Phone Pe Ad(720P_HD).mp4")
-        st.write("****--> Easy Transactions****")
-        st.write("****--> One App For All Your Payments****")
-        st.write("****--> Your Bank Account Is All You Need****")
-        st.write("****--> Multiple Payment Modes****")
-        st.write("****--> PhonePe Merchants****")
-        st.write("****--> Multiple Ways To Pay****")
-        st.write("****--> Direct Transfer & More****")
-        st.write("****--> QR Code****")
-        st.write("****--> Earn Great Rewards****")
-        
-    col3,col4= st.columns(2)
-    
-    with col3:
-        st.markdown(" ")
-        #st.video("C:\\Users\\vignesh\\Desktop\\CAPSTONE Projects\\phone pe\\PhonePe Motion Graphics(720P_HD).mp4")
-
-    with col4:
-        st.markdown(" ")
-        #st.write("****Easy Transactions****")
-        #st.write("****One App For All Your Payments****")
-        #st.write("****Your Bank Account Is All You Need****")
-        #st.write("****Multiple Payment Modes****")
-        #st.write("****PhonePe Merchants****")
-        #st.write("****Multiple Ways To Pay****")
-        #st.write("****1.Direct Transfer & More****")
-        #st.write("****2.QR Code****")
-        #st.write("****Earn Great Rewards****")
-
-    col5,col6= st.columns(2)
-
-    with col5:
-        st.markdown(" ")
-        st.markdown(" ")
-        st.markdown(" ")
-        st.markdown(" ")
-        st.markdown(" ")
-        st.markdown(" ")
-        st.markdown(" ")
-        st.markdown(" ")
-        st.markdown(" ")
-        st.write("****No Wallet Top-Up Required****")
-        st.write("****Pay Directly From Any Bank To Any Bank A/C****")
-        st.write("****Instantly & Free****")
-
-    with col6:
-        st.markdown(" ")
-        #st.video("C:\\Users\\vignesh\\Desktop\\CAPSTONE Projects\\phone pe\\PhonePe Motion Graphics(720P_HD)_2.mp4")
-
+        st.video("pulse-video.mp4")
 
 if select == "Data Exploration":
     
@@ -571,3 +513,19 @@ if select == "Top Charts":
 
     elif ques=="Top 50 Districts With Lowest Transaction Amount":
         ques10()
+        
+if select == "About":
+    st.image(Image.open("Phonepe_image2.png"),width = 500)
+    st.write("---")
+    st.write("The Indian digital payments story has truly captured the world's imagination."
+             " From the largest towns to the remotest villages, there is a payments revolution being driven by the penetration of mobile phones, mobile internet and states-of-the-art payments infrastructure built as Public Goods championed by the central bank and the government."
+             " Founded in December 2015, PhonePe has been a strong beneficiary of the API driven digitisation of payments in India. When we started, we were constantly looking for granular and definitive data sources on digital payments in India. "
+             "PhonePe Pulse is our way of giving back to the digital payments ecosystem.")
+    st.write("---")
+    
+    col1,col2 = st.columns(2)
+    with col1:
+        st.image(Image.open("about_phonepe.jpg"),width = 400)
+        
+    with col2:
+        st.image(Image.open("about_phonepe1.png"),width = 800)
